@@ -1,3 +1,4 @@
+# Partial Solution
 messages = int(input())
 
 for message in range(messages):
