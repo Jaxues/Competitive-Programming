@@ -1,11 +1,15 @@
 number = input()
-counter = 0
-for i in number:
-    j = int(i)
-    if j != 4:
-        if j != 7:
-            counter += 1
-if counter !=0:
-    print("NO")
+luck_num={'4','7'}
+total_num=0
+totaldigitset=set()
+for digit in number:
+    if digit in luck_num:
+        total_num+=1
 
-length=len()
+for total_digit in str(total_num):
+    totaldigitset.add(total_digit)
+
+if totaldigitset.issubset(luck_num):
+    print("YES")
+else:
+    print("NO")
