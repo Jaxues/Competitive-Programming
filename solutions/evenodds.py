@@ -1,12 +1,13 @@
+# Exceeds timelimit on test case 8
 num=list(map(int,input().split()))
 range_num=num[0]
 position=num[1]
-if range_num==position:
-    if range_num%2!=0:
-        print(num[0]-1)
+evens=[]
+odds=[]
+for number in range(1,range_num+1):
+    if number%2==0:
+        evens.append(number)
     else:
-        print(num[0])
-elif position/range_num <= 0.5:
-    print(range_num//2)
-else:
-    print(2)
+        odds.append(number)
+joined_list=odds+evens
+print(joined_list[position-1])
