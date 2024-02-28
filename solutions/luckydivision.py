@@ -1,27 +1,24 @@
 num=int(input())
-num_set=set()
-factors=set()
-def int_values(number):
-    for i in number:
-        num_set.add(int(i))
-lucky_num={4,7}
-int_values(str(num))
-if len(num_set)==2 and num_set.issubset(lucky_num)==1:
-        print("YES")
-elif len(num_set)==1 and num_set.issubset(lucky_num)==1:
-     print("YES")
-else:
-    num_set=set()
-    for x in range(1,num):
-        if num%x==0:
-            print(x)
-            factors.add(x)
-            print(factors)
-            int_values(str(x))
-            if num_set.intersection(lucky_num)==1:
-                print("YES")
-            else:
-                print("NO")
+lucky={'7','4'}
+lucky_count=0
+factors=[]
+for i in range(1,num+1):
+    if num%i==0:
+        factors.append(str(i))
+    
 
-        
+for factor in factors:
+    temp_set=set()
+    for string in factor: 
+        temp_set.add(string)
+    if temp_set.issubset(lucky):
+        lucky_count=1
+        break
+    else:
+        temp_set=set()
+
+if lucky_count==1:
+    print("YES")
+else:
+    print("NO")
 
